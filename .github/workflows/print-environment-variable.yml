@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Vypis studenty
         run: | 
-          echo "Seznam studentu: ${{ vars.STUDENTS }}"
+          echo -e "Seznam studentu:\n${{ vars.STUDENTS }}"
