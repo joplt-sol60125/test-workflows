@@ -1,5 +1,9 @@
 name: 'Hello World Action'
 description: 'Hello world'
+outputs:
+  text_greeting: # Název výstupu pro volající workflow
+    description: 'Vygenerovaný pozdrav'
+    value: ${{ steps.pozdrav.outputs.text_pozdravu }} # Odkaz na id: pozdrav
 runs:
   using: 'composite'
   steps:
