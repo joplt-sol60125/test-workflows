@@ -13,7 +13,7 @@ jobs:
         id: create-multiline-output # Toto ID používáš pro odkazování
         run: |
           echo "multi_out<<EOF" >> $GITHUB_OUTPUT
-          echo "První řádek" >> $GITHUB_OUTPUT
+          echo -e "\nPrvní řádek" >> $GITHUB_OUTPUT
           echo "Druhý řádek" >> $GITHUB_OUTPUT
           echo "Třetí řádek" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -21,4 +21,4 @@ jobs:
       # 2. Krok: Použití multiline outputu
       - name: Use multiline output
         run: |
-          echo "Multiline output: ${{ steps.create-multiline-output.outputs.multi_out }}"
+          echo "Multiline output z předchozího stepu '${{ steps.create-multiline-output.name }}': ${{ steps.create-multiline-output.outputs.multi_out }}"
