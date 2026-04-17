@@ -15,4 +15,4 @@ jobs:
         with:
           who-to-greet: 'GitHub uzivateli'
       - name: Získat vystupní cas
-        run: echo "Cas akce byl ${{ steps.hello.outputs.time }}"
+        run: echo "Cas akce byl ${{ steps.hello.outputs.get-time }}"
