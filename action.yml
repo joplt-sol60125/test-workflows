@@ -3,5 +3,6 @@ description: 'Hello world'
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello world!"
+    - id: pozdrav
+      run: echo "text_pozdravu='Hello world!'" >> $GITHUB_OUTPUT
       shell: bash
