@@ -1,0 +1,24 @@
+name: Ukázka předání multiline outputu mezi kroky
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  priklad-outputu:
+    runs-on: ubuntu-latest
+    steps:
+
+      # 1. Krok: Vytvoření multiline outputu
+      - name: Create multiline output
+        id: create-multiline-output # Toto ID používáš pro odkazování
+        run: |
+          echo "multi_out<<EOF" >> $GITHUB_OUTPUT
+          echo "První řádek"
+          echo "Druhý řádek"
+          echo "Třetí řádek"
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # 2. Krok: Použití multiline outputu
+      - name: Use multiline output
+        run: |
+          echo "Jméno uživatele je: ${{ steps.create-multiline-output.outputs.multi_out }}"
