@@ -1,19 +1,7 @@
 name: 'Hello World Action'
-description: 'Pozdravi uzivatele'
-inputs:
-  who-to-greet:  # Identifikátor vstupu
-    description: 'Kdo ma byt pozdraven'
-    required: true
-    default: 'Světe'
-outputs:
-  time: # Identifikátor výstupu
-    description: 'Cas pozdravu'
+description: 'Hello world'
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello ${{ inputs.who-to-greet }}!"
-      shell: bash
-    - id: get-time
-      run: |
-        echo "time=$(date)" >> $GITHUB_OUTPUT
+    - run: echo "Hello world!"
       shell: bash
