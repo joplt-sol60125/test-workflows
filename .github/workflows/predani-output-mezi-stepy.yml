@@ -17,4 +17,4 @@ jobs:
       # 2. Krok: Použití outputu
       - name: Výpis času
         run: |
-          echo "Čas vygenerovaný v předchozím kroku je: ${{ steps.hello.outputs.username }}"
+          echo "Jméno uživatele je: ${{ steps.hello.outputs.username }}"
