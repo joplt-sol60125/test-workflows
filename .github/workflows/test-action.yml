@@ -13,4 +13,5 @@ jobs:
         # Odkazuje na akci v aktualnim repozitari
         uses: ./ 
       - name: Získat string pozdravu z action
-        run: echo "Pozdrav byl: ${{ steps.hello.outputs.text_pozdravu }}"
+        run: | 
+          echo "Pozdrav byl: ${{ steps.hello.outputs.text_pozdravu }}"
