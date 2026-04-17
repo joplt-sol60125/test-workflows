@@ -14,5 +14,6 @@ runs:
     - run: echo "Hello ${{ inputs.who-to-greet }}!"
       shell: bash
     - id: get-time
-      run: echo "time=$(date)" >> $GITHUB_OUTPUT
+      run: |
+        echo "time=$(date)" >> $GITHUB_OUTPUT
       shell: bash
