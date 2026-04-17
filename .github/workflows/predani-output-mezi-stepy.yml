@@ -12,7 +12,7 @@ jobs:
       - name: Získání času
         id: hello # Toto ID používáš pro odkazování
         run: |
-          echo "time_now=$(date +'%H:%M:%S')" >> $GITHUB_OUTPUT
+          echo "TZ='Europe/Prague' time_now=$(date +'%H:%M:%S')" >> $GITHUB_OUTPUT
 
       # 2. Krok: Použití outputu
       - name: Výpis času
