@@ -21,4 +21,4 @@ jobs:
       # 2. Krok: Použití multiline outputu
       - name: Use multiline output
         run: |
-          echo "Multiline output z předchozího stepu '${{ steps.create-multiline-output.name }}': ${{ steps.create-multiline-output.outputs.multi_out }}"
+          echo "Multiline output z předchozího stepu create-multiline-output: ${{ steps.create-multiline-output.outputs.multi_out }}"
