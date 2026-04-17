@@ -1,0 +1,7 @@
+jobs:
+  print_environment_variable:
+    runs-on: ubuntu-latest
+    environment: tst  # Toto propojí job s vaším environmentem
+    steps:
+      - name: Vypiš studenty
+        run: echo "Seznam studentů: ${{ vars.STUDENTS }}"
