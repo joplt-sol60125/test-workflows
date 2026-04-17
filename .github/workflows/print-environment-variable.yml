@@ -1,3 +1,5 @@
+name: Print environment variable
+
 jobs:
   print_environment_variable:
     runs-on: ubuntu-latest
