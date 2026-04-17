@@ -1,9 +1,13 @@
 name: Print environment variable
 
+on:
+  workflow_dispatch: # Povolí ruční spuštění z karty Actions
+
 jobs:
   print_environment_variable:
     runs-on: ubuntu-latest
     environment: tst  # Toto propojí job s vaším environmentem
     steps:
-      - name: Vypiš studenty
-        run: echo "Seznam studentů: ${{ vars.STUDENTS }}"
+      - name: Vypis studenty
+        run: | 
+          echo "Seznam studentu: ${{ vars.STUDENTS }}"
