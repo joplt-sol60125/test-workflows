@@ -1,0 +1,18 @@
+name: Test Action
+on: 
+  workflow_dispatch:
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    name: Akce Hello World
+    steps:
+      - uses: actions/checkout@v3
+      - name: Spustit vlastni akci
+        id: hello
+        # Odkazuje na akci v aktualnim repozitari
+        uses: ./ 
+        with:
+          who-to-greet: 'GitHub uzivateli'
+      - name: Získat vystupní cas
+        run: echo "Cas akce byl ${{ steps.hello.outputs.time }}"
