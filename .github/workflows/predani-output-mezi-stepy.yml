@@ -1,0 +1,20 @@
+name: Ukázka Outputu mezi kroky
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  priklad-outputu:
+    runs-on: ubuntu-latest
+    steps:
+
+      # 1. Krok: Vytvoření outputu
+      - name: Získání času
+        id: hello # Toto ID používáš pro odkazování
+        run: |
+          echo "time_now=$(date +'%H:%M:%S')" >> $GITHUB_OUTPUT
+
+      # 2. Krok: Použití outputu
+      - name: Výpis času
+        run: |
+          echo "Čas vygenerovaný v předchozím kroku je: ${{ steps.hello.outputs.time_now }}"
