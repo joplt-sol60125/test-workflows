@@ -5,14 +5,12 @@ on:
 jobs:
   test-job:
     runs-on: ubuntu-latest
-    name: Akce Hello World
+    name: Akce pozdrav z action
     steps:
       - uses: actions/checkout@v3
-      - name: Spustit vlastni akci
+      - name: Spustit vlastni action
         id: hello
         # Odkazuje na akci v aktualnim repozitari
         uses: ./ 
-        with:
-          who-to-greet: 'GitHub uzivateli'
-      - name: Získat vystupní cas
-        run: echo "Cas akce byl ${{ steps.hello.outputs.get-time }}"
+      - name: Získat string pozdravu z action
+        run: echo "Pozdrav byl: ${{ steps.hello.outputs.text_pozdravu }}"
