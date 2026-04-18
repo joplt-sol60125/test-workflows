@@ -12,6 +12,8 @@ jobs:
         id: hello
         # Odkazuje na akci v aktualnim repozitari
         uses: ./ 
+        with:
+          who_to_greet: 'Jorge'
       - name: Získat string pozdravu z action
         run: | 
           echo "Pozdrav byl: ${{ steps.hello.outputs.text_greeting }}"
