@@ -11,9 +11,9 @@ jobs:
       - name: Spustit vlastni action
         id: hello
         # Odkazuje na akci v aktualnim repozitari
-        uses: ./ 
+        uses: joplt-sol60125/test-workflows@master 
         with:
-          who_to_greet: 'Jorge'
+          who_to_greet: 'Joe Shmoe'
       - name: Získat string pozdravu z action
         run: | 
           echo "Pozdrav byl: ${{ steps.hello.outputs.text_greeting }}"
