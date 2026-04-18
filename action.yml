@@ -1,5 +1,10 @@
 name: 'Hello World Action'
 description: 'Hello world'
+inputs:
+  user_name:  # ID parametru
+    description: 'Jméno uživatele'
+    required: true
+    default: 'World'
 outputs:
   text_greeting: # Název výstupu pro volající workflow
     description: 'Vygenerovaný pozdrav'
@@ -8,5 +13,5 @@ runs:
   using: 'composite'
   steps:
     - id: pozdrav
-      run: echo "text_pozdravu='Hello world!'" >> $GITHUB_OUTPUT
+      run: echo "text_pozdravu='Hello ${{ inputs.user_name }}!'" >> $GITHUB_OUTPUT
       shell: bash
